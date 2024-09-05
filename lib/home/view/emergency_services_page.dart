@@ -1,5 +1,7 @@
 import 'package:emergency_service_numbers/home/model/emergency_contact.dart';
 import 'package:emergency_service_numbers/home/view_model/repositories/emergency_contacts_provider.dart';
+import 'package:emergency_service_numbers/privacy_policy/view/privacy_policy.dart';
+import 'package:emergency_service_numbers/privacy_policy/view/terms_of_use.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
@@ -23,6 +25,38 @@ class EmergencyServicesPage extends ConsumerWidget {
             style: TextStyle(fontSize: 18.0),
           ),
           centerTitle: true,
+          actions: [
+            PopupMenuButton(
+              itemBuilder: (context) {
+                return <PopupMenuEntry<String>>[
+                  const PopupMenuItem<String>(
+                    value: 'Privacy Policy',
+                    child: Text('Privacy Policy'),
+                  ),
+                  const PopupMenuItem<String>(
+                    value: 'Terms of Use',
+                    child: Text('Terms of Use'),
+                  ),
+                ];
+              },
+              onSelected: (value) {
+                switch (value) {
+                  case 'Privacy Policy':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PrivacyPolicyPage()),
+                    );
+                  case 'Terms of Use':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TermsOfUsePage()),
+                    );
+                }
+              },
+            )
+          ],
         ),
         body: Column(
           mainAxisSize: MainAxisSize.min,
