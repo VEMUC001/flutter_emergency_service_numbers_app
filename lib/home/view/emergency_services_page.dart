@@ -1,11 +1,12 @@
-import 'package:emergency_service_numbers/home/model/emergency_contact.dart';
-import 'package:emergency_service_numbers/home/view_model/repositories/emergency_contacts_provider.dart';
-import 'package:emergency_service_numbers/privacy_policy/view/privacy_policy.dart';
-import 'package:emergency_service_numbers/privacy_policy/view/terms_of_use.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'package:emergency_service_numbers/home/model/emergency_contact.dart';
+import 'package:emergency_service_numbers/home/view_model/repositories/emergency_contacts_provider.dart';
+import 'package:emergency_service_numbers/privacy_policy/view/privacy_policy.dart';
+import 'package:emergency_service_numbers/privacy_policy/view/terms_of_use.dart';
 
 class EmergencyServicesPage extends ConsumerWidget {
   final FocusNode _searchFocusNode = FocusNode();
